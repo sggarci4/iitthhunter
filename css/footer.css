@@ -1,0 +1,124 @@
+/* ============================================
+   FOOTER - Pie de Página
+   Footer con grid de columnas y copyright
+============================================ */
+
+.footer {
+    background: var(--gray-900);
+    color: var(--white);
+    padding: var(--space-2xl) 0 var(--space-lg);
+    position: relative;
+}
+
+/* Línea decorativa superior */
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--primary-navy));
+}
+
+/* ===== GRID DE COLUMNAS ===== */
+.footer-grid {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-2xl);
+    margin-bottom: var(--space-xl);
+}
+
+/* ----- Columnas individuales ----- */
+.footer-col {
+    /* No necesita estilos adicionales, usa grid automático */
+}
+
+.footer-title {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+    color: var(--accent-gold);
+    font-family: var(--font-heading);
+}
+
+.footer-text {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+    font-size: var(--text-sm);
+}
+
+/* ----- Links del Footer ----- */
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.footer-links li {
+    /* Los <li> ya no tienen estilo de lista por el reset */
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: var(--text-sm);
+    transition: color var(--transition-base);
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: var(--accent-gold);
+    transform: translateX(5px);
+}
+
+/* Items de contacto (sin link) */
+.footer-links li:not(:has(a)) {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: var(--text-sm);
+}
+
+/* ===== COPYRIGHT - Parte inferior ===== */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--space-lg);
+    margin-top: var(--space-xl);
+    text-align: center;
+    max-width: var(--container-max);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: var(--text-sm);
+    margin: 0;
+}
+
+/* ===== RESPONSIVE - MÓVIL ===== */
+@media (max-width: 768px) {
+    .footer {
+        padding: var(--space-xl) 0 var(--space-lg);
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+        gap: var(--space-xl);
+    }
+    
+    /* Primera columna (About) más destacada */
+    .footer-col:first-child {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: var(--space-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-bottom p {
+        font-size: var(--text-xs);
+    }
+}
