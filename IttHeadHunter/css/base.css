@@ -1,0 +1,202 @@
+/* ============================================
+   BASE - Reset y Estilos Globales
+   Estilos fundamentales para toda la página
+============================================ */
+
+/* ===== RESET BÁSICO ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== HTML Y BODY ===== */
+html {
+    /* Scroll suave al hacer clic en enlaces ancla */
+    scroll-behavior: smooth;
+    /* Prevenir zoom en inputs en móvil */
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--gray-900);
+    background-color: var(--white);
+    /* Mejor renderizado de fuentes */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== TIPOGRAFÍA GLOBAL ===== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--gray-900);
+}
+
+h1 { font-size: var(--text-5xl); }
+h2 { font-size: var(--text-4xl); }
+h3 { font-size: var(--text-2xl); }
+h4 { font-size: var(--text-xl); }
+
+p {
+    margin-bottom: var(--space-sm);
+}
+
+/* ===== ENLACES ===== */
+a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: color var(--transition-base);
+}
+
+a:hover {
+    color: var(--primary-navy);
+}
+
+/* ===== IMÁGENES ===== */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== BOTONES BASE ===== */
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* ===== INPUTS Y FORMS ===== */
+input,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* ===== LISTAS ===== */
+ul, ol {
+    list-style: none;
+}
+
+/* ===== CONTENEDORES REUTILIZABLES ===== */
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+.container-narrow {
+    max-width: var(--container-narrow);
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+/* ===== SECCIONES ===== */
+section {
+    padding: var(--space-3xl) 0;
+}
+
+/* ===== HIGHLIGHT (texto en azul) ===== */
+.highlight {
+    color: var(--primary-blue);
+}
+
+.highlight-light {
+    color: var(--accent-gold);
+}
+
+/* ===== ENCABEZADOS DE SECCIÓN ===== */
+.section-header {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title {
+    margin-bottom: var(--space-md);
+}
+
+.section-subtitle {
+    font-size: var(--text-lg);
+    color: var(--gray-600);
+    line-height: 1.7;
+}
+
+/* ===== BOTONES REUTILIZABLES ===== */
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    font-size: var(--text-base);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-base);
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Botón primario (azul) */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-navy));
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Botón secundario (outline) */
+.btn-secondary {
+    background: transparent;
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* Botón ancho completo */
+.btn-block {
+    width: 100%;
+    display: block;
+}
+
+/* ===== UTILIDADES ===== */
+.text-center {
+    text-align: center;
+}
+
+.mt-lg {
+    margin-top: var(--space-lg);
+}
+
+.mb-lg {
+    margin-bottom: var(--space-lg);
+}
+
+/* ===== RESPONSIVE - Tipografía móvil ===== */
+@media (max-width: 768px) {
+    h1 { font-size: var(--text-3xl); }
+    h2 { font-size: var(--text-2xl); }
+    
+    .container,
+    .container-narrow {
+        padding: 0 var(--space-sm);
+    }
+    
+    section {
+        padding: var(--space-2xl) 0;
+    }
+}

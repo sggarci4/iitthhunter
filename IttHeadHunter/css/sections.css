@@ -1,0 +1,714 @@
+/* ============================================
+   SECTIONS - Estilos de todas las secciones
+   Hero, Trust, About, Services, Methodology, 
+   Industries, Contact
+============================================ */
+
+/* ========================================
+   HERO SECTION - Sección Principal
+======================================== */
+
+.hero {
+    background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 50%, var(--light-blue-bg) 100%);
+    padding-top: calc(70px + var(--space-2xl)); /* Compensar header fijo */
+    padding-bottom: var(--space-3xl);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Contenedor principal del hero (60/40 layout) */
+.hero-container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* 60% - 40% */
+    gap: var(--space-2xl);
+    align-items: center;
+}
+
+/* ----- Contenido del hero (60%) ----- */
+.hero-content {
+    /* No necesita estilos adicionales, usa grid automático */
+}
+
+.hero-title {
+    font-size: var(--text-5xl);
+    line-height: 1.1;
+    margin-bottom: var(--space-md);
+    color: var(--gray-900);
+}
+
+.hero-subtitle {
+    font-size: var(--text-lg);
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-bottom: var(--space-xl);
+}
+
+/* CTAs del hero */
+.hero-ctas {
+    display: flex;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xl);
+}
+
+/* ----- Imagen del hero (40%) ----- */
+.hero-image {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.hero-image:hover img {
+    transform: scale(1.05);
+}
+
+/* ----- Stats Bar ----- */
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    margin-top: var(--space-2xl);
+    max-width: var(--container-max);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--space-lg);
+}
+
+.stat-item {
+    text-align: center;
+    padding: var(--space-md);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--gray-300);
+}
+
+.stat-number {
+    display: block;
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--primary-blue);
+    font-family: var(--font-heading);
+}
+
+.stat-label {
+    display: block;
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+    font-weight: 500;
+    margin-top: var(--space-xs);
+}
+
+/* ----- Responsive Hero ----- */
+@media (max-width: 768px) {
+    .hero {
+        padding-top: calc(70px + var(--space-lg));
+        padding-bottom: var(--space-2xl);
+    }
+    
+    .hero-container {
+        grid-template-columns: 1fr; /* Una sola columna */
+        gap: var(--space-xl);
+    }
+    
+    .hero-title {
+        font-size: var(--text-3xl);
+        text-align: center;
+    }
+    
+    .hero-subtitle {
+        text-align: center;
+    }
+    
+    .hero-ctas {
+        flex-direction: column;
+    }
+    
+    .hero-stats {
+        grid-template-columns: 1fr; /* Stats en columna */
+    }
+}
+
+
+/* ========================================
+   TRUST SECTION - Logos de Clientes
+======================================== */
+
+.trust-section {
+    background: var(--gray-50);
+    padding: var(--space-xl) 0;
+    border-top: 1px solid var(--gray-300);
+    border-bottom: 1px solid var(--gray-300);
+}
+
+.trust-text {
+    text-align: center;
+    color: var(--gray-600);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--space-md);
+}
+
+.trust-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-2xl);
+    flex-wrap: wrap;
+}
+
+.trust-logo {
+    width: 120px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trust-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    /* Logos en escala de grises */
+    filter: grayscale(100%) opacity(0.6);
+    transition: filter var(--transition-base);
+}
+
+.trust-logo:hover img {
+    filter: grayscale(0%) opacity(1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .trust-logos {
+        gap: var(--space-lg);
+    }
+    
+    .trust-logo {
+        width: 100px;
+        height: 50px;
+    }
+}
+
+
+/* ========================================
+   ABOUT SECTION - Nosotros
+======================================== */
+
+.about {
+    background: var(--white);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-xl);
+}
+
+/* ----- Cards de About ----- */
+.about-card {
+    background: var(--gray-50);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--gray-300);
+    transition: all var(--transition-base);
+}
+
+.about-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    background: var(--white);
+    border-color: var(--primary-blue);
+}
+
+/* Icono de la card */
+.card-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--light-blue-bg);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-md);
+    transition: all var(--transition-base);
+}
+
+.card-icon svg {
+    width: 28px;
+    height: 28px;
+    stroke: var(--primary-blue);
+}
+
+.about-card:hover .card-icon {
+    background: var(--primary-blue);
+    transform: scale(1.1);
+}
+
+.about-card:hover .card-icon svg {
+    stroke: var(--white);
+}
+
+.card-title {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-sm);
+    color: var(--gray-900);
+}
+
+.card-text {
+    color: var(--gray-600);
+    line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ========================================
+   SERVICES SECTION - Servicios
+======================================== */
+
+.services {
+    background: linear-gradient(135deg, var(--gray-50) 0%, var(--light-blue-bg) 100%);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Grid 2x2 */
+    gap: var(--space-xl);
+}
+
+/* ----- Cards de Servicios ----- */
+.service-card {
+    background: var(--white);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--gray-300);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto decorativo sutil en esquina */
+.service-card::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-navy));
+    border-radius: 50%;
+    opacity: 0.05;
+    transition: all var(--transition-base);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-blue);
+}
+
+.service-card:hover::after {
+    opacity: 0.1;
+    transform: scale(1.2);
+}
+
+/* Los íconos usan las mismas clases que about-card */
+.service-card .card-icon {
+    width: 70px;
+    height: 70px;
+}
+
+.service-card .card-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.service-card:hover .card-icon {
+    background: var(--primary-blue);
+    transform: scale(1.1) rotate(5deg);
+}
+
+.service-card:hover .card-icon svg {
+    stroke: var(--white);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+    }
+}
+
+
+/* ========================================
+   METHODOLOGY SECTION - Timeline
+======================================== */
+
+.methodology {
+    background: var(--white);
+}
+
+/* Timeline horizontal */
+.timeline {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* ----- Items del Timeline ----- */
+.timeline-item {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+/* Icono numerado */
+.timeline-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-md);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-number {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--white);
+    font-family: var(--font-heading);
+}
+
+.timeline-title {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+    color: var(--gray-900);
+}
+
+.timeline-text {
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
+/* ----- Conectores entre items ----- */
+.timeline-connector {
+    flex: 0 0 60px;
+    height: 3px;
+    background: var(--gray-300);
+    position: relative;
+    top: 30px;
+    z-index: 1;
+}
+
+/* Responsive - Timeline vertical en móvil */
+@media (max-width: 768px) {
+    .timeline {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .timeline-item {
+        padding-left: 80px;
+        text-align: left;
+        margin-bottom: var(--space-xl);
+        position: relative;
+    }
+    
+    .timeline-icon {
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin: 0;
+    }
+    
+    .timeline-connector {
+        display: none; /* Ocultar conectores en móvil */
+    }
+}
+
+
+/* ========================================
+   INDUSTRIES SECTION - Industrias
+======================================== */
+
+.industries {
+    background: var(--gray-50);
+}
+
+.industries-grid {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    gap: var(--space-lg);
+}
+
+/* ----- Items de Industria ----- */
+.industry-item {
+    background: var(--white);
+    padding: var(--space-xl) var(--space-md);
+    border-radius: var(--radius-md);
+    text-align: center;
+    border: 2px solid var(--gray-300);
+    transition: all var(--transition-base);
+    cursor: pointer;
+}
+
+.industry-item:hover {
+    border-color: var(--primary-blue);
+    background: var(--light-blue-bg);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.industry-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--light-blue-bg);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-md);
+    transition: all var(--transition-base);
+}
+
+.industry-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--primary-blue);
+}
+
+.industry-item:hover .industry-icon {
+    background: var(--primary-blue);
+    transform: scale(1.1);
+}
+
+.industry-item:hover .industry-icon svg {
+    stroke: var(--white);
+}
+
+.industry-name {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--gray-900);
+    transition: color var(--transition-base);
+}
+
+.industry-item:hover .industry-name {
+    color: var(--primary-blue);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .industries-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil */
+    }
+}
+
+@media (max-width: 480px) {
+    .industries-grid {
+        grid-template-columns: 1fr; /* 1 columna en móviles pequeños */
+    }
+}
+
+
+/* ========================================
+   CONTACT SECTION - Contacto
+======================================== */
+
+.contact {
+    background: linear-gradient(135deg, var(--primary-navy) 0%, var(--gray-900) 100%);
+    color: var(--white);
+}
+
+.contact-wrapper {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: start;
+}
+
+/* ----- Columna Izquierda: Info ----- */
+.contact-info {
+    /* No necesita estilos adicionales */
+}
+
+.contact-title {
+    font-size: var(--text-4xl);
+    line-height: 1.2;
+    margin-bottom: var(--space-md);
+}
+
+.contact-text {
+    font-size: var(--text-lg);
+    line-height: 1.7;
+    opacity: 0.9;
+    margin-bottom: var(--space-xl);
+}
+
+/* Métodos de contacto */
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.contact-method {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all var(--transition-base);
+}
+
+.contact-method:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(10px);
+}
+
+.method-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--primary-blue);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all var(--transition-base);
+}
+
+.method-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--white);
+}
+
+.contact-method:hover .method-icon {
+    background: var(--accent-gold);
+    transform: scale(1.1);
+}
+
+.method-text strong {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.method-text p {
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* ----- Columna Derecha: Formulario ----- */
+.contact-form-wrapper {
+    background: rgba(255, 255, 255, 0.95);
+    padding: var(--space-xl);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+}
+
+.contact-form {
+    /* Contenedor del form */
+}
+
+/* Grupos de formulario */
+.form-group {
+    margin-bottom: var(--space-md);
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    color: var(--gray-900);
+    margin-bottom: var(--space-xs);
+    font-size: var(--text-sm);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: var(--space-sm);
+    border: 2px solid var(--gray-300);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-base);
+    color: var(--gray-900);
+    background: var(--white);
+    transition: all var(--transition-base);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* File input */
+.form-group input[type="file"] {
+    padding: var(--space-xs);
+    cursor: pointer;
+}
+
+/* Submit button en formulario */
+.contact-form .btn-primary {
+    margin-top: var(--space-sm);
+}
+
+/* Responsive Contact */
+@media (max-width: 768px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+    
+    .contact-title {
+        font-size: var(--text-2xl);
+    }
+    
+    .contact-form-wrapper {
+        padding: var(--space-lg);
+    }
+}
